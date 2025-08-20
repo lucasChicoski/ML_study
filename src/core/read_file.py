@@ -6,6 +6,7 @@ import os
 class ReadFile:
     PATH_ARCHIVE: str = "files/dataset"
     
+    
     def __init__(self):
         pass
     
@@ -14,8 +15,8 @@ class ReadFile:
         
     
     def fetch_data(self, url:str):
-        urllib.request.urlretrieve(url, 'files/dataset/best-games-of-all-time.zip')
-        zipfile.ZipFile('files/dataset/best-games-of-all-time.zip').extractall(path=self.PATH_ARCHIVE)
+        urllib.request.urlretrieve(url, f'{self.PATH_ARCHIVE}/best-games-of-all-time.zip')
+        zipfile.ZipFile(f'{self.PATH_ARCHIVE}/best-games-of-all-time.zip').extractall(path=self.PATH_ARCHIVE)
         # tarfile.open('files/dataset/best-games-of-all-time.zip').extractall(path=self.PATH_ARCHIVE)
         
     def verify_path(self) -> bool:
